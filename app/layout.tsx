@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import Wallet from "@/components/wallet";
 import { ThemeProvider } from "@/components/theme-provider";
-
+import NavbarLayout from "@/components/navbar-layout";
+import { Toaster } from "@/components/ui/sonner";
+import QueryProvider from "@/components/query-provider";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -15,10 +17,7 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+
 
 export const metadata: Metadata = {
   title: "Soloyal",
@@ -41,9 +40,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Wallet>
-            {children}
-          </Wallet>
+          <Toaster />
+          <QueryProvider>
+            <Wallet>
+              <NavbarLayout />
+              {children}
+            </Wallet>
+          </QueryProvider>
         </ThemeProvider>
       </body>
     </html>

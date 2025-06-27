@@ -2,9 +2,17 @@ import prisma from "@/db";
 import { NextRequest, NextResponse } from "next/server";
 import { merchantSchema } from "@/types/merchantSchema";
 import { PublicKey } from "@solana/web3.js";
+import { auth } from "@/lib/auth";
 
 export async function POST(req: NextRequest) {
   try {
+    // const session = await auth.api.getSession({
+    //   headers: req.headers,
+    // });
+
+    // if (!session) {
+    //   return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    // }
     const body = await req.json();
     const { success, data, error } = merchantSchema.safeParse(body);
 
@@ -35,6 +43,8 @@ export async function POST(req: NextRequest) {
         publicKey: publicKeyStr,
         loyaltyTokenMintAddress: data.loyaltyTokenMintAddress,
         discountRate: data.discountRate,
+        //TODO: get user id from session and gate this endpoint
+        userId: "123",
       },
     });
 
