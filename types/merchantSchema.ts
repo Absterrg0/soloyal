@@ -2,7 +2,7 @@ import { z } from "zod";
 
 export const merchantSchema = z.object({
   id: z.string().min(1).optional(),
-  name: z.string().min(1),
+  orgName: z.string().min(1),
   publicKey: z.string().min(44).max(44),
   loyaltyTokenMintAddress: z.string().min(1),
   discountRate: z.number().min(0).max(1),

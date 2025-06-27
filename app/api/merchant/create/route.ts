@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
 
     const merchant = await prisma.merchant.create({
       data: {
-        name: data.name,
+        orgName: data.orgName,
         publicKey: publicKeyStr,
         loyaltyTokenMintAddress: data.loyaltyTokenMintAddress,
         discountRate: data.discountRate,

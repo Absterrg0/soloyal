@@ -1,6 +1,6 @@
 import { ModeToggle } from "./mode-toggle-button";
 import Image from "next/image";
-
+import CustomWallet from "./custom-wallet-ui/custom-wallet";
 
 export default function NavbarLayout() {
   return (
@@ -17,7 +17,10 @@ export default function NavbarLayout() {
       </div>
       <span className="text-xl font-bold text-foreground">Soloyal</span>
     </div>
+    <div className="flex items-center space-x-3">
+    <CustomWallet />
     <ModeToggle />
+  </div>
   </header>
   ) 
 }

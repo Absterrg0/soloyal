@@ -1,5 +1,5 @@
 'use client'
-import CustomWallet from "./custom-wallet";
+import CustomWallet from "./custom-wallet-ui/custom-wallet";
 
 export default function LandingPage() {
     return (

@@ -5,13 +5,15 @@ interface GlassButtonProps {
   children: React.ReactNode;
   className?: string;
   variant?: 'primary' | 'secondary' | 'default';
+  disabled?: boolean;
 }
 
 export default function GlassButton({ 
   onClick, 
   children, 
   className = "",
-  variant = 'default'
+  variant = 'default',
+  disabled = false
 }: GlassButtonProps) {
   
   const getVariantClasses = () => {
@@ -52,6 +54,7 @@ export default function GlassButton({
         ${getVariantClasses()}
         ${className}
       `}
+      disabled={disabled}
     >
       <div className="flex items-center justify-center relative z-10">
         {children}
