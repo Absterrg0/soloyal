@@ -82,7 +82,7 @@ export default function OnboardingComponent() {
           <OnboardingCard
             title="Merchant"
             description="Accept payments and manage loyalty rewards for your business"
-            icon={<Store className="w-8 h-8 text-purple-500 dark:text-purple-400" />}
+            icon={<Store className="w-8 h-8 text-primary dark:text-primary" />}
             onClick={() => handleAccountTypeSelection('MERCHANT')}
             buttonText="I'm a Merchant"
           />
@@ -91,7 +91,7 @@ export default function OnboardingComponent() {
           <OnboardingCard
             title="Customer"
             description="Make payments and earn loyalty rewards from your favorite merchants"
-            icon={<Wallet className="w-8 h-8 text-purple-500 dark:text-purple-400" />}
+            icon={<Wallet className="w-8 h-8 text-primary dark:text-primary" />}
             onClick={() => handleAccountTypeSelection('CUSTOMER')}
             buttonText="I'm a Customer"
           />

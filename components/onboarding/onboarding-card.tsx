@@ -18,13 +18,13 @@ export default function OnboardingCard({
   buttonText
 }: OnboardingCardProps) {
   return (
-    <Card className="crypto-glass border border-primary/20 shadow-lg hover:shadow-xl dark:shadow-primary/5 transition-all duration-200 ease-out cursor-pointer group">
+    <Card className="crypto-glass shadow-lg hover:shadow-xl dark:shadow-primary/5 transition-all duration-300 ease-out cursor-pointer group">
       <CardHeader className="text-center pb-4">
-        <div className="w-16 h-16 bg-gradient-to-br from-purple-500/15 to-purple-600/15 dark:from-purple-400/25 dark:to-purple-500/25 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-105 transition-transform duration-200 ease-out border border-purple-500/20">
+        <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-all duration-300 ease-out crypto-glass-static">
           {icon}
         </div>
-        <CardTitle className="text-2xl font-bold text-foreground">{title}</CardTitle>
-        <p className="text-muted-foreground">
+        <CardTitle className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-200">{title}</CardTitle>
+        <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors duration-200">
           {description}
         </p>
       </CardHeader>
@@ -32,7 +32,7 @@ export default function OnboardingCard({
         <GlassButton 
           onClick={onClick}
           variant="primary"
-          className="mt-6"
+          className="mt-6 group-hover:scale-105 transition-transform duration-200"
         >
           {buttonText}
         </GlassButton>

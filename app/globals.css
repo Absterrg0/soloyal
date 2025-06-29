@@ -189,12 +189,13 @@ body {
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: var(--radius);
   box-shadow: 
     0 8px 32px rgba(99, 102, 241, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.8),
     inset 0 -1px 0 rgba(255, 255, 255, 0.4);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .dark .crypto-glass {
@@ -206,25 +207,72 @@ body {
     0 8px 32px rgba(0, 0, 0, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
     inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .crypto-glass:hover {
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(99, 102, 241, 0.3);
   box-shadow: 
-    0 12px 40px rgba(99, 102, 241, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.5);
+    0 10px 36px rgba(99, 102, 241, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.45);
   transform: translateY(-2px);
 }
 
 .dark .crypto-glass:hover {
-  background: rgba(15, 15, 15, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(15, 15, 15, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 
-    0 12px 40px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+    0 10px 36px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* Crypto Glass Static - No hover effects */
+.crypto-glass-static {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: var(--radius);
+  box-shadow: 
+    0 8px 32px rgba(99, 102, 241, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dark .crypto-glass-static {
+  background: rgba(15, 15, 15, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Disable hover effects for static variant */
+.crypto-glass-static:hover {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(99, 102, 241, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.4);
+  transform: none;
+}
+
+.dark .crypto-glass-static:hover {
+  background: rgba(15, 15, 15, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.03);
 }
 
 /* Fixed Badge for Light Mode */
@@ -385,6 +433,195 @@ body {
 }
 
 
+/* Crypto Input Styles */
+.crypto-input {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  outline: none;
+  color: hsl(var(--foreground));
+  position: relative;
+  z-index: 1;
+}
+
+.crypto-input:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(100, 116, 139, 0.4);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.crypto-input:focus {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 
+    0 6px 16px rgba(99, 102, 241, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.dark .crypto-input {
+  background: rgba(15, 15, 17, 0.9);
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  color: hsl(var(--foreground));
+}
+
+.dark .crypto-input:hover {
+  background: rgba(15, 15, 17, 0.95);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 6px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.dark .crypto-input:focus {
+  background: rgba(15, 15, 17, 0.98);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.crypto-input::placeholder {
+  color: rgba(100, 116, 139, 0.6);
+}
+
+.dark .crypto-input::placeholder {
+  color: rgba(148, 163, 184, 0.5);
+}
+
+/* Crypto Checkbox Styles */
+.crypto-checkbox {
+  width: 1.125rem;
+  height: 1.125rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  accent-color: rgba(99, 102, 241, 0.9);
+}
+
+.crypto-checkbox:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.crypto-checkbox:focus {
+  outline: none;
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 
+    0 0 0 2px rgba(99, 102, 241, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.dark .crypto-checkbox {
+  background: rgba(26, 26, 31, 0.9);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  accent-color: rgba(138, 148, 255, 0.9);
+}
+
+.dark .crypto-checkbox:hover {
+  border-color: rgba(138, 148, 255, 0.4);
+  box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.dark .crypto-checkbox:focus {
+  border-color: rgba(138, 148, 255, 0.6);
+  box-shadow: 
+    0 0 0 2px rgba(138, 148, 255, 0.2),
+    0 2px 4px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+/* Simple Crypto Tooltip Styles */
+.crypto-tooltip {
+  background: rgba(30, 30, 35, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.75rem;
+  max-width: 250px;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.9);
+  z-index: 50;
+  animation: tooltip-fade-in 0.15s ease-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dark .crypto-tooltip {
+  background: rgba(30, 30, 35, 0.95);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Remove tooltip arrow */
+.crypto-tooltip[data-side="top"]::before,
+.crypto-tooltip[data-side="bottom"]::before,
+.crypto-tooltip[data-side="left"]::before,
+.crypto-tooltip[data-side="right"]::before {
+  display: none !important;
+}
+
+/* Tooltip animations */
+@keyframes tooltip-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Crypto Info Icon Styles */
+.crypto-info-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: rgba(99, 102, 241, 0.5);
+  transition: all 0.2s ease;
+  cursor: help;
+  flex-shrink: 0;
+}
+
+.crypto-info-icon:hover {
+  color: rgba(99, 102, 241, 0.7);
+  transform: scale(1.05);
+}
+
+.dark .crypto-info-icon {
+  color: rgba(138, 148, 255, 0.6);
+}
+
+.dark .crypto-info-icon:hover {
+  color: rgba(138, 148, 255, 0.8);
+}
+
 /* Enhanced Button Styles */
 .crypto-glass button, button.crypto-glass {
   position: relative;
@@ -408,7 +645,8 @@ body {
 }
 
 /* Enhanced Card Styles */
-.crypto-glass.rounded-2xl, .crypto-glass.rounded-xl {
+.crypto-glass.rounded-2xl, .crypto-glass.rounded-xl,
+.crypto-glass-static.rounded-2xl, .crypto-glass-static.rounded-xl {
   border-radius: 2rem;
 }
 
@@ -440,7 +678,8 @@ body {
     animation: none;
   }
   
-  .crypto-glass {
+  .crypto-glass,
+  .crypto-glass-static {
     transition: none;
   }
 }

@@ -41,10 +41,10 @@ function TokenChoiceForm({
           </h1>
         </div>
 
-        <Card className="crypto-glass border border-primary/20 shadow-lg">
+        <Card className="crypto-glass-static shadow-lg">
           <CardHeader className="text-center pb-4">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-500/15 to-purple-600/15 dark:from-purple-400/25 dark:to-purple-500/25 rounded-full flex items-center justify-center mx-auto mb-3 border border-purple-500/20">
-              <Sparkles className="w-5 h-5 text-purple-500 dark:text-purple-400" />
+            <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3 crypto-glass-static">
+              <Sparkles className="w-5 h-5 text-primary dark:text-primary" />
             </div>
             <CardTitle className="text-lg">
               Choose Token Option for {orgName}
@@ -55,14 +55,14 @@ function TokenChoiceForm({
           </CardHeader>
           <CardContent className="space-y-4">
             {/* Create Custom Token Option */}
-            <Card className="crypto-glass border border-green-500/20 hover:border-green-500/40 transition-colors cursor-pointer group" onClick={onCreateToken}>
+            <Card className="crypto-glass hover:shadow-md transition-all duration-300 cursor-pointer group border-l-4 border-l-green-500/40 hover:border-l-green-500" onClick={onCreateToken}>
               <CardContent className="p-4">
                 <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-green-500/15 to-green-600/15 dark:from-green-400/25 dark:to-green-500/25 rounded-lg flex items-center justify-center border border-green-500/20 group-hover:border-green-500/40">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center crypto-glass-static group-hover:scale-110 transition-all duration-200">
                     <Plus className="w-4 h-4 text-green-500 dark:text-green-400" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="font-semibold text-sm text-foreground mb-1">
+                    <h3 className="font-semibold text-sm text-foreground mb-1 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
                       Create Custom Token
                     </h3>
                     <p className="text-xs text-muted-foreground">
@@ -77,10 +77,10 @@ function TokenChoiceForm({
             </Card>
 
             {/* Integrate Existing Token Option */}
-            <Card className="crypto-glass border border-gray-500/20 opacity-60 cursor-not-allowed">
+            <Card className="crypto-glass opacity-60 cursor-not-allowed border-l-4 border-l-gray-400/40">
               <CardContent className="p-4">
                 <div className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-gray-500/15 to-gray-600/15 dark:from-gray-400/25 dark:to-gray-500/25 rounded-lg flex items-center justify-center border border-gray-500/20">
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center crypto-glass-static">
                     <Link className="w-4 h-4 text-gray-500 dark:text-gray-400" />
                   </div>
                   <div className="flex-1">
@@ -173,10 +173,10 @@ export default function MerchantOnboarding({ onComplete, onBack }: MerchantOnboa
           </h1>
         </div>
 
-        <Card className="crypto-glass border border-primary/20 shadow-lg">
+        <Card className="crypto-glass shadow-lg">
           <CardHeader className="text-center pb-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-500/15 to-purple-600/15 dark:from-purple-400/25 dark:to-purple-500/25 rounded-full flex items-center justify-center mx-auto mb-3 border border-purple-500/20">
-              <Building2 className="w-5 h-5 text-purple-500 dark:text-purple-400" />
+            <div className="w-10 h-10 rounded-full flex items-center justify-center mx-auto mb-3 crypto-glass-static">
+              <Building2 className="w-5 h-5 text-primary dark:text-primary" />
             </div>
             <CardTitle className="text-lg">
               Business Setup
@@ -194,7 +194,7 @@ export default function MerchantOnboarding({ onComplete, onBack }: MerchantOnboa
                   placeholder="Your business name"
                   value={orgName}
                   onChange={(e) => setOrgName(e.target.value)}
-                  className="crypto-glass border-primary/30 focus:border-primary/50"
+                  className="crypto-input"
                   required
                 />
               </div>

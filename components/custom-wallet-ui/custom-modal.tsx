@@ -2,9 +2,12 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { Button } from "../ui/button";
 import { X } from "lucide-react";
 import { toast } from "sonner";
+import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export default function CustomWalletModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
     const { wallets, select } = useWallet();
+    const {theme} = useTheme();
 
     const handleWalletSelect = async (walletName: string) => {
         try {
@@ -24,19 +27,19 @@ export default function CustomWalletModal({ isOpen, onClose }: { isOpen: boolean
     const popularWallets = [
         {
             name: 'Phantom',
-            icon: '👻',
+            icon: <Image src={theme === 'dark' ? "/phantom-dark.png" : "/phantom.png"} alt="Phantom" width={32} height={32} />,
             description: 'Most popular Solana wallet',
             installed: wallets.find(w => w.adapter.name === 'Phantom')?.readyState === 'Installed'
         },
         {
             name: 'MetaMask',
-            icon: '🦊',
+            icon: <Image src={theme === 'dark' ? "/metamask-dark.png" : "/metamask.png"} alt="MetaMask" width={24} height={24} />,
             description: 'Popular multi-chain wallet',
             installed: wallets.find(w => w.adapter.name === 'MetaMask')?.readyState === 'Installed'
         },
         {
             name: 'Backpack',
-            icon: '🎒',
+            icon: <Image src={theme === 'dark' ? "/backpack-dark.png" : "/backpack.png"} alt="Backpack" width={24} height={24} />,
             description: 'Modern Solana wallet',
             installed: wallets.find(w => w.adapter.name === 'Backpack')?.readyState === 'Installed'
         }
